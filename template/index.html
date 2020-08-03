@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+    
+    .fixed-header,
+    .fixed-footer {
+        width: 100%;
+        position: fixed;
+        background: #333;
+        padding: 10px 0;
+        color: #fff;
+    }
+    
+    .fixed-header {
+        top: 0;
+    }
+    
+    .fixed-footer {
+        bottom: 0;
+    }
+    
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        /* Center the DIV horizontally */
+    }
+    
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 7px 25px;
+        display: inline-block;
+    }
+</style>
+
+<body>
+    <div class="fixed-header">
+        <div class>
+            <nav>
+                <a href="/"><span style="font-size: 40px;">COVID-19 DashBoard</span></a>
+
+            </nav>
+        </div>
+    </div>
+    <div style="float: left;">
+        <canvas id="myChart" style="height: 210px; width: 240px;"></canvas>
+    </div>
+</body>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'horizontalBar',
+
+        // The data for our dataset
+        data: {
+            labels: ['HTML and CSS 102', 'HTML and CSS 101', 'Python Fundamentals', 'CapaCiti Module 6'],
+            datasets: [{
+                label: 'Completed LMS Activties',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+</script>
+
+</html>
